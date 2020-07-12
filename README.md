@@ -27,19 +27,12 @@
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
 
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+- Allow users post articles 
+- Users of the articles are able to edit and delete their articles  
+- People are able to create a user account with passwords
+- Authentication
 
-<br>
-
-### Goals
-
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
 
 <br>
 
@@ -49,11 +42,11 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | React|
+|   React Router   | Route |
+| Bootstrap or SemanticUI | Front End CSS library |
+|     Axios      | Database assistant |
+|  Express Router  | |
 
 <br>
 
@@ -122,12 +115,14 @@ src
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
 | Add Login Form    |    L     |     3 hrs      |      hrs     |     hrs    |
-| Create CRUD functionality |    H     |     6 hrs      |      hrs     |     TBD     |
+| Create CRUD functionality |    H     |     6 hrs      |      hrs     |     hrs     |
 | Create User Authentication    |    L     |     3 hrs      |      hrs     |     hrs    |
-|     |    L     |     3 hrs      |     hrs     |     hrs    |
-| Create React    |    L     |     3 hrs      |      hrs     |     hrs    |
+|  Components   |    L     |     7 hrs      |     hrs     |     hrs    |
+| Create React App   |    H     |     .5 hrs      |      hrs     |     hrs    |
 | CSS using tailwind   |    L     |     8 hrs      |      hrs     |     hrs    |
-| TOTAL               |          |     6 hrs      |      hrs     |     TBD     |
+| Ruby backend scaffold   |    H     |     4 hrs      |      hrs     |     hrs    |
+| Incorporate   |    H     |     3 hrs      |      hrs     |     hrs    |
+| TOTAL               |          |     42hrs      |      hrs     |     hrs     |
 
 
 <br>
