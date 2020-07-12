@@ -1,10 +1,5 @@
 # Read-And-butter
 
-# PROJECT 4 README <!-- omit in toc -->
-
-> The Project Planning section **should be completed** for your project pitch with instructors.
->
-> To ensure correct Markdown, copy and paste the raw template code into your project repo README file. Remove ALL template instructions and replace with your project details.
 
 - [Overview](#overview)
 - [MVP](#mvp)
@@ -26,8 +21,7 @@
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
-
+**Read&&Butter** 
 
 <br>
 
@@ -69,7 +63,8 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Dummy Link](url)
+
+(https://app.diagrams.net/#G1erOI__HNB1h6-BGTG5HY3baUOB7uo1wi)
 
 - Desktop Landing
 
@@ -93,51 +88,47 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 - Mobile Resource Index
 
-#### Component Tree
-
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. 
 
 #### Component Hierarchy
-
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
 
 ``` structure
 
 src
 |__ assets/
       |__ fonts
-      |__ graphics
-      |__ images
       |__ mockups
 |__ components/
       |__ Header.jsx
+      |__ Nav.jsx
+      |__ Articles.jsx
 |__ services/
-
+      |__ Auth.jsx
 ```
 
 #### Component Breakdown
 
-> Use this section to go into further depth regarding your components, including breaking down the components as stateless or stateful, and considering the passing of data between those components.
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo._               |
+|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo will direct back to._               |
 |  Navigation  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   class    |   y   |   n   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card | functional |   n   |   y   | _The cards will render the post info via props._                 |
+|   Article    |   class    |   y   |   n   | _The Articles will render cards using flexbox._      |
+|  | functional |   n   |   y   | _The cards will render the post info via props._                 |
 |    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
 
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Add Login Form    |    L     |     3 hrs      |      hrs     |     hrs    |
+| Create CRUD functionality |    H     |     6 hrs      |      hrs     |     TBD     |
+| Create User Authentication    |    L     |     3 hrs      |      hrs     |     hrs    |
+|     |    L     |     3 hrs      |     hrs     |     hrs    |
+| Create React    |    L     |     3 hrs      |      hrs     |     hrs    |
+| CSS using tailwind   |    L     |     8 hrs      |      hrs     |     hrs    |
+| TOTAL               |          |     6 hrs      |      hrs     |     TBD     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
 <br>
 
@@ -145,7 +136,7 @@ src
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+
 
 <br>
 
@@ -153,14 +144,15 @@ src
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+
 
 ***
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+***
+## Articles Referenced
