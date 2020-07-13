@@ -54,32 +54,24 @@
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
 
-(https://app.diagrams.net/#G1erOI__HNB1h6-BGTG5HY3baUOB7uo1wi)
+
+
 
 - Desktop Landing
 
-![Dummy Link](url)
+![Landing](https://i.imgur.com/m5FQ4eB.png)
 
-- Desktop Hero
+- Mobile
 
-![Dummy Link](url)
+![Mobile](https://i.imgur.com/fqwx5DU.png)
 
-- Resource Index
+- Tablet Resource
 
-![Dummy Link](url)
+![Tablet](https://i.imgur.com/QOjq49h.png)
 
-- Resource Show
 
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
 
 
 #### Component Hierarchy
@@ -106,7 +98,7 @@ src
 |    Header    | functional |   n   |   n   | _The header will contain the navigation and logo will direct back to._               |
 |  Navigation  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
 |   Article    |   class    |   y   |   n   | _The Articles will render cards using flexbox._      |
-|  | functional |   n   |   y   | _The cards will render the post info via props._                 |
+| Authentication | functional |   n   |   y   | _Allow users to log in or create an account_                 |
 |    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
 
 #### Time Estimates
@@ -130,7 +122,7 @@ src
 ### Server (Back End)
 
 #### ERD Model
-
+![https://i.imgur.com/hwknOBp.png](https://i.imgur.com/hwknOBp.png)
 
 
 <br>
