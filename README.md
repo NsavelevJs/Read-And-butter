@@ -44,7 +44,7 @@
 | :--------------: | :----------------------------------------- |
 |      React       | React|
 |   React Router   | Route |
-| Bootstrap or SemanticUI | Front End CSS library |
+| TailWind | Front End CSS library |
 |     Axios      | Database assistant |
 
 
@@ -84,11 +84,18 @@ src
       |__ mockups
 |__ components/
       |__ Header.jsx
+      |__ App.jsx    //Holds State
       |__ Nav.jsx
       |__ Articles.jsx
-      |__ Authentication
+      |__Login.jsx
+      |__SignUp.jsx
+      |__PostMaker.jsx
+      |__ Footer.jsx
 |__ services/
-      |__ Auth.jsx
+      |__ auth.js
+      |__ apiHelper.js
+      |__ apiconfig.js
+
 ```
 
 #### Component Breakdown
@@ -96,11 +103,14 @@ src
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo will direct back to._               |
-|  Navigation  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   Article    |   class    |   y   |   n   | _The Articles will render cards using flexbox._      |
-| Authentication | functional |   n   |   y   | _Allow users to log in or create an account_                 |
-|    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    App    | Class |   y   |   n   | _Where State Exists_               |
+|    Articles    | Class |   n   |   n   | _The header will contain the navigation and logo will direct back to._               |
+|    PostMasker    | functional |   n   |   n   | _Creates articles._               |
+|    Header    | Class |   n   |   n   | _The header will contain the navigation and logo will direct back to._               |
+|  Navigation  | class |   n   |   n   | _The navigation will provide a link to each of the pages._       |
+| SignIn | Functional |   n   |   y   | _Allow users to log in._                 |
+| SignUp | Functional |   n   |   y   | _Allow users create an account_                 |
+| About | class |   n   |   y   | _About Section_                 |
 
 #### Time Estimates
 
@@ -131,8 +141,9 @@ src
 ***
 
 ## Post-MVP
-
-
+- Algo Talk - Section where people can blog about Algorithms and share thoughts.
+- Holy Data - Section where people can blog about Data Structures and share thoughts.
+- Latest articles side bar- Most recent articles will be posted via clickable links to the articles 
 
 ***
 
