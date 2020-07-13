@@ -49,7 +49,7 @@ Judgment free zone blog app where we don't place likes or comments on articles y
 | TailWind | Front End CSS library |
 |     Axios      | Database assistant |
 |     Bcrypt      | Encryption |
-|     JWT      | Database assistant |
+|     JWT      | Webtokens |
 
 
 <br>
