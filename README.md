@@ -90,15 +90,20 @@ src
       |__Login.jsx
       |__SignUp.jsx
       |__PostMaker.jsx
-      |__ Footer.jsx
+      |__ Home.jsx
+      |__ About.jsx
 |__ services/
       |__ auth.js
       |__ apiHelper.js
       |__ apiconfig.js
 
 ```
+#### Component tree
+![tree](https://i.imgur.com/cClCnt8.png)
+
 
 #### Component Breakdown
+
 
 
 |  Component   |    Type    | state | props | Description                                                      |
@@ -111,6 +116,7 @@ src
 | SignIn | Functional |   n   |   y   | _Allow users to log in._                 |
 | SignUp | Functional |   n   |   y   | _Allow users create an account_                 |
 | About | class |   n   |   y   | _About Section_                 |
+| Home | class |   n   |   y   | _Home Page_                 |
 
 #### Time Estimates
 
@@ -133,7 +139,7 @@ src
 ### Server (Back End)
 
 #### ERD Model
-![https://i.imgur.com/hwknOBp.png](https://i.imgur.com/hwknOBp.png)
+![https://i.imgur.com/hwknOBp.png](https://i.imgur.com/IQHPFlP.png)
 
 
 <br>
