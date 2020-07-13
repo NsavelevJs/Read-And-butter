@@ -46,7 +46,7 @@
 |   React Router   | Route |
 | Bootstrap or SemanticUI | Front End CSS library |
 |     Axios      | Database assistant |
-|  Express Router  | |
+
 
 <br>
 
@@ -86,6 +86,7 @@ src
       |__ Header.jsx
       |__ Nav.jsx
       |__ Articles.jsx
+      |__ Authentication
 |__ services/
       |__ Auth.jsx
 ```
