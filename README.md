@@ -48,6 +48,8 @@ Judgment free zone blog app where we don't place likes or comments on articles y
 |   React Router   | Route |
 | TailWind | Front End CSS library |
 |     Axios      | Database assistant |
+|     Bcrypt      | Encryption |
+|     JWT      | Database assistant |
 
 
 <br>
@@ -94,6 +96,8 @@ src
       |__PostMaker.jsx
       |__ Home.jsx
       |__ About.jsx
+      |__ Edit.jsx
+      |__ Delete.jsx
 |__ services/
       |__ auth.js
       |__ apiHelper.js
@@ -101,7 +105,7 @@ src
 
 ```
 #### Component tree
-![tree](https://i.imgur.com/cClCnt8.png)
+![tree](https://i.imgur.com/BQmEfnL.png)
 
 
 #### Component Breakdown
@@ -119,6 +123,8 @@ src
 | SignUp | Functional |   n   |   y   | _Allow users create an account_                 |
 | About | class |   n   |   y   | _About Read&& Butter_                 |
 | Home | class |   n   |   y   | _Home Page_                 |
+| Edit | class |   n   |   y   | _Edits articles_                 |
+| Delete | class |   n   |   y   | _Deletes articles_                 |
 
 #### Time Estimates
 
@@ -141,7 +147,7 @@ src
 ### Server (Back End)
 
 #### ERD Model
-![https://i.imgur.com/hwknOBp.png](https://i.imgur.com/IQHPFlP.png)
+![ERD](https://i.imgur.com/rDkdUjb.png)
 
 
 <br>
