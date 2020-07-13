@@ -23,6 +23,8 @@
 
 **Read&&Butter** 
 
+Judgment free zone blog app where we don't place likes or comments on articles you posted. Simply put an open medium with no judgment. 
+
 <br>
 
 ## MVP
@@ -115,7 +117,7 @@ src
 |  Navigation  | class |   n   |   n   | _The navigation will provide a link to each of the pages._       |
 | SignIn | Functional |   n   |   y   | _Allow users to log in._                 |
 | SignUp | Functional |   n   |   y   | _Allow users create an account_                 |
-| About | class |   n   |   y   | _About Section_                 |
+| About | class |   n   |   y   | _About Read&& Butter_                 |
 | Home | class |   n   |   y   | _Home Page_                 |
 
 #### Time Estimates
