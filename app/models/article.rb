@@ -1,4 +1,4 @@
 class Article < ApplicationRecord
-    has_one :tags
-    has_and_belongs_to_many :users
+    belongs_to :tag
+    belongs_to :user
 end
