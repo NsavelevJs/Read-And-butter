@@ -47,9 +47,9 @@ export default class SignIn extends Component {
               </button>
 
 
-            {/* <Link className="flex-shrink-0 border-transparent border-4 text-orange-500 hover:text-orange-300 text-sm py-1 px-2 rounded" type="button" to='/SignUp'>
+            <Link className="flex-shrink-0 border-transparent border-4 text-orange-500 hover:text-orange-300 text-sm py-1 px-2 rounded" type="button" to='/SignUp'>
               Sign Up
-              </Link> */}
+              </Link>
 
           {/* </div> */}
         </form>
