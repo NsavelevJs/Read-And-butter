@@ -18,6 +18,15 @@ export default class Articles extends Component {
                 <div className="text-sm">
                   <p className="text-gray-900 leading-none">NickS</p>
                   <p className="text-gray-600">Date</p>
+                  <ul className="flex ">
+<li>
+                  <a href="" className="text-gray-600 shadow bg-orange-300 hover:bg-orange-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Edit</a>
+</li>
+
+<li>
+                  <a className="text-gray-600 shadow bg-orange-300 hover:bg-orange-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Delete</a>
+</li>
+                  </ul>
                 </div>
               </div>
             </div>
