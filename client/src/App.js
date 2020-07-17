@@ -5,7 +5,7 @@ import {
   removeToken,
   verifyUser,
 } from "./services/auth";
-import {getUsers, getArticle, addArticle} from './services/api-helper'
+import { getUsers, getArticle, addArticle } from "./services/api-helper";
 import Home from "./Pages/Home";
 import "./tailwind.output.css";
 import SignIn from "./Pages/SignIn";
@@ -19,47 +19,10 @@ class App extends Component {
   state = {
     currentUser: null,
     userData: {
-      username: '',
-      password: ''
-    }
-
+      username: "",
+      password: "",
+    },
   };
-  // componentDidMount = async () => {
-  //   const currentUser = await verifyUser()
-  //   this.setState({
-  //     currentUser
-  //   })
-  //   const users = await getUsers()
-  //   this.setState({
-  //     users
-  //   })
-  // }
-
-  // handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   this.setState(prevState => ({
-  //     userData: {
-  //       ...prevState.userData,
-  //       [name]: value
-  //     }
-  //   }))
-  // }
-
-  // loginSubmit = async (e) => {
-  //   e.preventDefault()
-  //   const currentUser = await loginUser(this.state.userData)
-  //   this.setState({
-  //     currentUser
-  //   })
-  // }
-  // handleRegister = async (e) => {
-  //   e.preventDefault()
-  //   const currentUser = await registerUser(this.state.userData)
-  //   this.setState({
-  //     currentUser
-  //   })
-  //   this.props.history.push('/')
-  // }
 
 
   componentDidMount() {
@@ -67,8 +30,9 @@ class App extends Component {
   }
 
   handleLogin = async (userData) => {
-    const currentUser = await loginUser(userData);
-    this.setState({ currentUser });
+    console.log(userData,"how you doin")
+    // const currentUser = await loginUser(userData);
+    // this.setState({ currentUser });
   };
 
   handleRegister = async (userData) => {
@@ -99,20 +63,44 @@ class App extends Component {
               <Home
                 currentUser={this.state.currentUser}
                 handleLogin={this.handleLogin}
-
                 handleRegister={this.handleRegister}
               />
 
-{/* <Route path="/SignIn">
+              {/* <Route path="/SignIn">
               <SignIn
-              
+              handleLogin={this.handleLogin}
               />
 </Route> */}
-
             </Route>
             <Route exact path="/About" component={About} />
-            <Route exact path="/SignIn" component={SignIn} handleLogin={this.handleLogin} />
-            <Route exact path="/SignUp" component={SignUp} handleRegister={this.handleRegister} />
+            {/* <Route
+              exact
+              path="/SignIn"
+              component={SignIn}
+              handleLogin={this.handleLogin}
+            /> */}
+            <Route
+              exact
+              path="/SignIn"
+              render={(props) => (
+                <SignIn
+                  {...props}
+                  component={SignIn}
+                  handleLogin={this.handleLogin}
+                />
+              )}
+            ></Route>
+            <Route
+              exact
+              path="/SignUp"
+              render={(props) => (
+                <SignUp
+                  {...props}
+                  component={SignUp}
+                  handleRegister={this.handleRegister}
+                />
+              )}
+            ></Route>
           </Switch>
         </Router>
 

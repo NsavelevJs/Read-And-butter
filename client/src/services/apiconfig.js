@@ -4,7 +4,7 @@ import Axios from 'axios'
 let apiUrl
 
 const apiUrls = {
-    production: '',
+    production: 'http://localhost:3000/',
     development: 'http://localhost:3000/'
 }
 
