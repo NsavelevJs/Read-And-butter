@@ -1,20 +1,53 @@
 import React, { Component } from 'react'
-
+import {Link} from 'react-router-dom'
 export default class SignIn extends Component {
+  state = {
+    username: "",
+    password: ""
+  }
+
+  handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    })
+  }
     render() {
+      const { username, password } = this.state;
+      const { handleLogin, history } = this.props;
         return (
-            <form class="w-full max-w-sm">
-            <div class="flex items-center border-b border-b-2 border-teal-500 py-2">
-              <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Username" aria-label="Username"/>
-              <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Password" aria-label="Password"/>
-              <button class="flex-shrink-0 bg-orange-300 hover:bg-orange-200 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+          <div className="container flex justify-center flex-wrap bg-white mx-auto px-4 font-serif">
+            <form class="w-full max-w-sm"onSubmit={(e) => {
+        e.preventDefault();
+        handleLogin(this.state);
+        history.push('/')
+      }}>
+            <div class="flex items-center border-b border-b-2 border-orange-400 py-2">
+              <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" 
+              type="text" 
+              placeholder="Username" 
+              aria-label="Username" 
+              name="username"
+            value={username}
+            onChange={this.handleChange}/>
+              <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" 
+              type="password" 
+              placeholder="Password"
+               aria-label="Password"
+            name="password"
+            value={password}
+            onChange={this.handleChange}/>
+              <button class="flex-shrink-0 bg-orange-300 hover:bg-orange-500 border-orange-400 hover:border-orange-200 text-sm border-4 text-white py-1 px-2 rounded" type="button">
                 Sign In
               </button>
-              <button class="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
+
+              <Link class="flex-shrink-0 border-transparent border-4 text-orange-500 hover:text-orange-300 text-sm py-1 px-2 rounded" type="button" to='/SignUp'>
                 Sign Up
-              </button>
+              </Link>
+
             </div>
           </form>
+          </div>
         )
     
 }
