@@ -167,5 +167,7 @@ src
 
 ## Code Issues & Resolutions
 
-***
+
 ## Articles Referenced
+
+Tailwind card logic used 
