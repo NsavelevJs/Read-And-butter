@@ -7,7 +7,7 @@ export const getUsers = async () => {
 }
 
 export const getArticle = async (id) => {
-  const response = await api.get(`/user/${article}/`)
+  const response = await api.get(`/user/${id}/`)
   return response.data
 }
 
