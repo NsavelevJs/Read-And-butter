@@ -5,39 +5,49 @@ import {
   removeToken,
   verifyUser,
 } from "./services/auth";
-import { getUsers, getArticle, addArticle } from "./services/api-helper";
+import { getTags} from "./services/api-helper";
 import Home from "./Pages/Home";
 import "./tailwind.output.css";
+import Postmaker from "./Shared/Postmaker";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import Header from "./Shared/Header";
 import About from "./Pages/About";
-import { withRouter, BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  withRouter,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 import "./tailwind.output.css";
+
 
 class App extends Component {
   state = {
     currentUser: null,
+    addArticle: false,
     userData: {
       username: "",
       password: "",
     },
+    tags:[]
   };
-
 
   componentDidMount() {
     this.handleVerify();
+    this.getTags();
   }
 
   handleLogin = async (userData) => {
-    console.log(userData,"how you doin")
+    console.log(userData, "how you doin");
     const currentUser = await loginUser(userData);
     this.setState({ currentUser });
   };
 
   handleRegister = async (userData) => {
     const currentUser = await registerUser(userData);
-    console.log('how you doin?')
+    console.log("how you doin?");
     this.setState({ currentUser });
   };
 
@@ -54,10 +64,18 @@ class App extends Component {
     const currentUser = await verifyUser();
     this.setState({ currentUser });
   };
+getTags=async()=>{
+const tags = await getTags();
+this.setState({tags})
+}
+
   render() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser} handleLogout={this.handleLogout}/>
+        <Header
+          currentUser={this.state.currentUser}
+          handleLogout={this.handleLogout}
+        />
         <Router>
           <Switch>
             <Route exact path="/">
@@ -66,20 +84,9 @@ class App extends Component {
                 handleLogin={this.handleLogin}
                 handleRegister={this.handleRegister}
               />
-
-              {/* <Route path="/SignIn">
-              <SignIn
-              handleLogin={this.handleLogin}
-              />
-</Route> */}
             </Route>
             <Route exact path="/About" component={About} />
-            {/* <Route
-              exact
-              path="/SignIn"
-              component={SignIn}
-              handleLogin={this.handleLogin}
-            /> */}
+
             <Route
               exact
               path="/SignIn"
@@ -101,6 +108,11 @@ class App extends Component {
                   handleRegister={this.handleRegister}
                 />
               )}
+            ></Route>
+            <Route
+              exact
+              path="/Postmaker"
+              render={(props) => <Postmaker {...props} tags={this.state.tags} />}
             ></Route>
           </Switch>
         </Router>
