@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
 
-    render json: @article, include: :tag
+    render json: @articles, include: [:tag,:user]
   end
 
   # GET /articles/1

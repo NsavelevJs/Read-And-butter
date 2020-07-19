@@ -26,7 +26,7 @@ export default class SignIn extends Component {
             handleLogin(this.state);
             history.push('/')
           }}>
-          {/* <div className="flex items-center border-b border-b-2 border-orange-400 py-2"> */}
+          <div className="flex items-center border-b border-b-2 border-orange-400 py-2">
             <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
               type="text"
               placeholder="Username"
@@ -42,7 +42,7 @@ export default class SignIn extends Component {
               value={password}
               onChange={this.handleChange} />
 
-            <button className="flex-shrink-0 bg-orange-300 hover:bg-orange-500 border-orange-400 hover:border-orange-200 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+            <button className="flex-shrink-0 bg-orange-300 hover:bg-orange-500 border-orange-400 hover:border-orange-200 text-sm border-4 text-white py-1 px-2 rounded" type="submit">
               Sign In
               </button>
 
@@ -51,7 +51,7 @@ export default class SignIn extends Component {
               Sign Up
               </Link>
 
-          {/* </div> */}
+          </div>
         </form>
       </div>
     )

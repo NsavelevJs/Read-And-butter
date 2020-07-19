@@ -12,7 +12,7 @@ import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import Header from "./Shared/Header";
 import About from "./Pages/About";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { withRouter, BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./tailwind.output.css";
 
 class App extends Component {
@@ -31,12 +31,13 @@ class App extends Component {
 
   handleLogin = async (userData) => {
     console.log(userData,"how you doin")
-    // const currentUser = await loginUser(userData);
-    // this.setState({ currentUser });
+    const currentUser = await loginUser(userData);
+    this.setState({ currentUser });
   };
 
   handleRegister = async (userData) => {
     const currentUser = await registerUser(userData);
+    console.log('how you doin?')
     this.setState({ currentUser });
   };
 
@@ -56,7 +57,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header currentUser={this.state.currentUser} handleLogout={this.handleLogout}/>
         <Router>
           <Switch>
             <Route exact path="/">
@@ -119,4 +120,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default withRouter(App);

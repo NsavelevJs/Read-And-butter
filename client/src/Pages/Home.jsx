@@ -7,7 +7,7 @@ export default function Home(props) {
     
     return (
     <div>
-      <Articles/>
+      <Articles currentUser={props.currentUser}/>
       </div>
     )
   }
