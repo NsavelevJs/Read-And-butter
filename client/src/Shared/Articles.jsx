@@ -1,13 +1,38 @@
 import React, { Component } from 'react'
 import {getArticles} from '../services/articles'
+import {deleteArticle, getTags} from '../services/api-helper'
 export default class Articles extends Component {
   state={
-    articles:[]
+    articles:[],
+    deleteArticle: false
   }
   componentDidMount= async () => {
 const articles = await getArticles()
 this.setState({articles})
+
   }
+
+
+  handleChange = (e) => {
+    const { name, value } = e.target
+    this.setState(prevState => ({
+        article: {
+            ...prevState.article,
+            [name]: value
+        }
+    }))
+}
+
+
+  handleDelete = async (id) => {
+     await deleteArticle(id)
+     this.setState(prevState=>({
+       articles: prevState.articles.filter(article => article.id !== id)
+     }))
+
+}
+
+
   render() {
     return (
 
@@ -16,7 +41,7 @@ this.setState({articles})
         {
           this.state.articles.map(article => (
 
-<div className="max-w-sm rounded overflow-hidden m-4 shadow-lg items-center self-center">
+<div className="max-w-sm rounded overflow-hidden m-4 shadow-lg items-center ">
 <img class="w-full" src={article.img_url} alt=""/>
         
 
@@ -32,11 +57,11 @@ this.setState({articles})
                 {this.props.currentUser && this.props.currentUser.id == article.user_id &&
                 <>
                 <li>
-                  <button href="" className="text-gray-600 shadow bg-orange-300 hover:bg-orange-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Edit</button>
+                  <button href="" onClick={() => this.handleDelete(article)} className="text-gray-600 shadow bg-orange-300 hover:bg-orange-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Edit</button>
                 </li>
 
                 <li>
-                  <button className="text-gray-600 shadow bg-orange-300 hover:bg-orange-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Delete</button>
+                  <button className="text-gray-600 shadow bg-orange-300 hover:bg-orange-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" onClick=''>Delete</button>
                 </li>
                 </>
                 }
@@ -45,8 +70,7 @@ this.setState({articles})
             </div>
             </div>
           </div>
-          //  </div>
-        // </div>
+      
           )
 
           )

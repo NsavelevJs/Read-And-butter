@@ -5,7 +5,7 @@ import {
   removeToken,
   verifyUser,
 } from "./services/auth";
-import { getTags} from "./services/api-helper";
+import { getTags, deleteArticle} from "./services/api-helper";
 import Home from "./Pages/Home";
 import "./tailwind.output.css";
 import Postmaker from "./Shared/Postmaker";
@@ -27,6 +27,7 @@ class App extends Component {
   state = {
     currentUser: null,
     addArticle: false,
+    deleteArticle:false,
     userData: {
       username: "",
       password: "",
@@ -68,6 +69,13 @@ getTags=async()=>{
 const tags = await getTags();
 this.setState({tags})
 }
+handleDelete = async (id) => {
+  await deleteArticle(id)
+  this.setState(prevState=>({
+    articles: prevState.articles.filter(article => article.id !== id)
+  }))
+
+}
 
   render() {
     return (
@@ -83,6 +91,7 @@ this.setState({tags})
                 currentUser={this.state.currentUser}
                 handleLogin={this.handleLogin}
                 handleRegister={this.handleRegister}
+                handleDelete={this.handleDelete}
               />
             </Route>
             <Route exact path="/About" component={About} />

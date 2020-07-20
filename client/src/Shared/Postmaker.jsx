@@ -10,8 +10,8 @@ export default class Postmaker extends Component {
             title: '',
             content: '',
             img_url: ''
-        }, 
-        tag:null
+        },
+        tag: null
 
     }
 
@@ -43,53 +43,57 @@ export default class Postmaker extends Component {
 
     handleDropDown = (e) => {
         const { value } = e.target
-       this.setState({
-           tag:value
-       })
+        this.setState({
+            tag: value
+        })
     }
 
     render() {
-        // const { addArticle, history } = this.props;
+        
         return (
             <div className='flex justify-center'>
-               
-                    <form onSubmit={this.handleAdd} className="w-full max-w-sm"
-                    >
-                        <h3>Create An Article</h3>
 
-                        <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">Title
+                <form onSubmit={this.handleAdd} className="w-full max-w-sm self-center"
+                >
+                    <h3>Create An Article</h3>
+
+                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">Title
             <input
-                                name='title'
-                                type='text'
-                                value={this.state.article.title}
-                                onChange={this.handleChange} />
-                        </label>
-                        <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">Image
+                            name='title'
+                            type='text'
+                            value={this.state.article.title}
+                            onChange={this.handleChange} 
+                            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-200" id="inline-full-name"
+                            />
+                    </label>
+                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">Image
             <input
-                                name='img_url'
-                                type='text'
-                                value={this.state.article.img_url}
-                                onChange={this.handleChange} />
-                        </label>
-                        <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">Content
+            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-200" id="inline-full-name"
+                            name='img_url'
+                            type='text'
+                            value={this.state.article.img_url}
+                            onChange={this.handleChange} />
+                    </label>
+                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">Content
             <textarea className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-200" id="inline-full-name" type="text" placeholder="Content"
-                                name='content'
-                                type='text'
-                                value={this.state.article.content}
-                                onChange={this.handleChange} />
-                        </label>
+                            name='content'
+                            type='text'
+                            value={this.state.article.content}
+                            onChange={this.handleChange} />
+                    </label>
 
-                        <select onChange={this.handleDropDown}>
-                            {this.props.tags.map(tag=>( 
-                                <option value={tag.id}> {tag.title}</option>
-                            ))}
-                              </select>
+                    <select onChange={this.handleDropDown} className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                        {this.props.tags.map(tag => (
+                            <option value={tag.id}> {tag.title}</option>
+                        ))}
+                    </select>
 
-                        <button className="flex-shrink-0 bg-orange-300 hover:bg-orange-500 border-orange-400 hover:border-orange-200 text-sm border-4 text-white py-1 px-2 rounded" type="submit">Submit</button>
+                    <button className="flex-shrink-0 bg-orange-300 hover:bg-orange-500 border-orange-400 hover:border-orange-200 text-sm border-4 text-white py-1 px-2 rounded" type="submit">Submit</button>
 
-                    </form>
-                
+                </form>
+
             </div>
         )
     }
 }
+// Got this card from : https://tailwindcss.com/components/cards

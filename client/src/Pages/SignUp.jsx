@@ -64,42 +64,6 @@ export default class SignUp extends Component {
           </div>
         </form>
       </div>
-
-      
-       
-
-
-
-
-           
-             
-              // <label>
-              //   Username:
-              //   <input 
-              //     type="text"
-              //     name="username"
-              //     value={username}
-              //     onChange={this.handleChange}
-              //   />
-              // </label>
-           
-              
-              // <br />
-              // <label>
-              //   Password:
-              //   <input
-              //     type="password"
-              //     name="password"
-              //     value={password}
-              //     onChange={this.handleChange}
-              //   />
-              // </label>
-            //   <br />
-            //   <button>Submit</button>
-            // </form>
           )
         }
       }
-//     )
-//   }
-// }

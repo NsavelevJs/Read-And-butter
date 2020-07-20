@@ -6,7 +6,7 @@ export default function Header(props) {
     const { currentUser, handleLogout } = props;
     return (
         <div id="header">
-            <ul className="bg-gray-400 flex sm:justify-evenly items-center py-4 text-xl text-orange-500 space-evenly font-mono">
+            <ul className="bg-gray-400 flex sm:justify-evenly items-center py-4 text-xl text-orange-500 space-evenly font-mono m-0">
                 {currentUser ? (
                     <>
                         <p className=" text-2xl text-bold mb-5 items-center text-center flex justify-evenly shadow bg-orange-300 hover:bg-orange-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">{currentUser.username}</p>
@@ -14,7 +14,7 @@ export default function Header(props) {
                             <a className="text-2xl text-bold mb-5 items-center text-center flex justify-evenly shadow bg-orange-300 hover:bg-orange-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" href="/">
                                 <h1>Read&&Butter</h1>
                                 </a>
-                        <button href='/'onClick={handleLogout}>Logout</button>
+                        <button className="text-2xl text-bold mb-5 items-center text-center flex justify-evenly shadow bg-orange-300 hover:bg-orange-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" href='/'onClick={handleLogout}>Logout</button>
                     </>
                 ) : (
 <>

@@ -167,6 +167,8 @@ src
 
 ## Code Issues & Resolutions
 
+## Change log
+Removed Navigation bar due to implementation on the header.
 
 ## Articles Referenced
 
