@@ -23,11 +23,14 @@ export const putArticle = async (tag_id, id , Info) => {
 }
 
 // articles#destroy
-export const deleteArticle = async (tag_id,id) => {
-  const resp = await api.delete(`/tags/${tag_id}/articles/${id}`)
+export const deleteArticle = async (id) => {
+  const resp = await api.delete(`/tags/tag/articles/${id}`)
   return resp.data;
 }
-                                                   
+// export const deleteArticle = async (id) => {
+//   const resp = await api.delete(`/articles/${id}`)
+//   return resp.data;
+// }                                                   
 
 export const getTags = async () => {
   const response = await api.get('/tags')

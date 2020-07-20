@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
     @tag = Tag.find(params[:tag_id])
     @article.tag = @tag
     if @article.save
-      render json: @article, status: :created
+      render json: @article, include: [:tag,:user], status: :created
     else
       render json: @article.errors, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   def update
     if @article.update(article_params)
-      render json: @article
+      render json: @article, include: [:tag,:user]
     else
       render json: @article.errors, status: :unprocessable_entity
     end

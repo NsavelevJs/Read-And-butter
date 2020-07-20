@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { addArticle } from '../services/api-helper';
 import { getArticles } from '../services/articles';
-
-export default class Postmaker extends Component {
+import {withRouter} from 'react-router-dom'
+class Postmaker extends Component {
     state = {
         articles: null,
         addArticle: false,
@@ -17,7 +17,7 @@ export default class Postmaker extends Component {
 
     componentDidMount = async () => {
         const id = this.props.match.params.id
-        const articles = await getArticles(id)
+        const articles = await getArticles()
         this.setState({
             articles
         })
@@ -37,8 +37,9 @@ export default class Postmaker extends Component {
         e.preventDefault();
         const newArticle = await addArticle(this.state.tag, this.state.article)
         this.setState(prevState => ({
-            article: [...prevState.articles, newArticle]
+            articles: [...prevState.articles, newArticle]
         }))
+        this.props.history.push('/')
     }
 
     handleDropDown = (e) => {
@@ -53,7 +54,10 @@ export default class Postmaker extends Component {
         return (
             <div className='flex justify-center'>
 
-                <form onSubmit={this.handleAdd} className="w-full max-w-sm self-center"
+                <form onSubmit={(e)=>{
+                    e.preventDefault()
+                    this.props.handleAdd(this.state.tag, this.state.article)
+                }} className="w-full max-w-sm self-center"
                 >
                     <h3>Create An Article</h3>
 
@@ -96,4 +100,5 @@ export default class Postmaker extends Component {
         )
     }
 }
+export default withRouter(Postmaker)
 // Got this card from : https://tailwindcss.com/components/cards
