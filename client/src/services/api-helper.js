@@ -26,11 +26,7 @@ export const putArticle = async (tag_id, id , Info) => {
 export const deleteArticle = async (id) => {
   const resp = await api.delete(`/tags/tag/articles/${id}`)
   return resp.data;
-}
-// export const deleteArticle = async (id) => {
-//   const resp = await api.delete(`/articles/${id}`)
-//   return resp.data;
-// }                                                   
+}                                                  
 
 export const getTags = async () => {
   const response = await api.get('/tags')

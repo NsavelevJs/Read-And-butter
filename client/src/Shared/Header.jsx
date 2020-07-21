@@ -1,6 +1,5 @@
 import React from 'react'
 
-// import Nav from './Shared/Nav'
 
 export default function Header(props) {
     const { currentUser, handleLogout } = props;

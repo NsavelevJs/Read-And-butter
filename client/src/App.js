@@ -30,7 +30,6 @@ import {
   Link,
 } from "react-router-dom";
 import "./tailwind.output.css";
-// import { getArticles } from "./services/articles";
 
 class App extends Component {
   state = {

@@ -4,7 +4,7 @@ import Axios from 'axios'
 let apiUrl
 
 const apiUrls = {
-    production: 'http://localhost:3000/',
+    production: 'https://read-and-butter.herokuapp.com/',
     development: 'http://localhost:3000/'
 }
 
