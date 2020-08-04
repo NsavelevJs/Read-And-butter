@@ -83,25 +83,22 @@ Judgment free zone blog app where we don't place likes or comments on articles y
 ``` structure
 
 src
-|__ assets/
-      |__ fonts
-      |__ mockups
-|__ components/
-      |__ Header.jsx
-      |__ App.jsx    //Holds State
-      |__ Nav.jsx
-      |__ Articles.jsx
-      |__Login.jsx
-      |__SignUp.jsx
-      |__PostMaker.jsx
+|__ App.jsx    //Holds State
+|__ Pages/
+      |__ About.jsx  
       |__ Home.jsx
-      |__ About.jsx
+      |__SignUp.jsx     
+      |__SignIn.jsx
+|__ Shared/
+      |__ Articles.jsx
       |__ Edit.jsx
-      |__ Delete.jsx
+      |__ Header.jsx
+      |__PostMaker.jsx
 |__ services/
       |__ auth.js
       |__ apiHelper.js
       |__ apiconfig.js
+      |__articles.js
 
 ```
 #### Component tree
@@ -129,17 +126,17 @@ src
 #### Time Estimates
 
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Login Form    |    L     |     3 hrs      |      hrs     |     hrs    |
-| Create CRUD functionality |    H     |     6 hrs      |      hrs     |     hrs     |
-| Create User Authentication    |    L     |     3 hrs      |      hrs     |     hrs    |
-|  Components   |    L     |     7 hrs      |     hrs     |     hrs    |
-| Create React App   |    H     |     .5 hrs      |      hrs     |     hrs    |
-| CSS using tailwind   |    L     |     8 hrs      |      hrs     |     hrs    |
-| Ruby backend scaffold   |    H     |     4 hrs      |      hrs     |     hrs    |
-| Incorporate   |    H     |     3 hrs      |      hrs     |     hrs    |
-| TOTAL               |          |     42hrs      |      hrs     |     hrs     |
+| Task                | Priority | Estimated Time | Time Invested |
+| ------------------- | :------: | :------------: | :-----------: | 
+| Add Login Form    |    L     |     3 hrs      |      3hrs     |
+| Create CRUD functionality |    H     |     6 hrs      |      8hrs     |
+| Create User Authentication    |    L     |     3 hrs      |      1hrs     |
+|  Components   |    L     |     7 hrs      |     5hrs     |
+| Create React App   |    H     |     .5 hrs      |      .1hrs     |
+| CSS using tailwind   |    L     |     8 hrs      |      4hrs     |
+| Ruby backend scaffold   |    H     |     4 hrs      |      1.5hrs     |
+| Incorporate Backend => Frontend   |    H     |     3 hrs      |      5hrs     |
+| TOTAL               |          |     42hrs      |     27 hrs     |
 
 
 <br>
@@ -155,15 +152,36 @@ src
 ***
 
 ## Post-MVP
-- Algo Talk - Section where people can blog about Algorithms and share thoughts.
-- Holy Data - Section where people can blog about Data Structures and share thoughts.
-- Latest articles side bar- Most recent articles will be posted via clickable links to the articles 
+- Tags - When turned visible, will take you a feed with all posts that have the same tag.
 
 ***
 
 ## Code Showcase
 
+```
+// Found in App.js
 
+handleEdit = async (tag_id, Id, Info) => {
+    const updatedArticle = await putArticle(tag_id, Id, Info);
+    this.setState(prevState => ({
+      articles: prevState.articles.map(article => article.id === Id ? updatedArticle : article)
+    }))
+    this.props.history.push('/')
+  };
+
+//Found in Edit.jsx
+
+componentDidUpdate=(prevProps)=>{
+        if(prevProps.article !== this.props.article){
+            this.setFormData()
+        }
+    }
+    handleChange = (e) => {
+        const { name, value } = e.target
+        this.setState({ [name]: value })
+    }
+
+```
 
 ## Code Issues & Resolutions
 
